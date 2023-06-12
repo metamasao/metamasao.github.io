@@ -38,13 +38,13 @@ export default function BlogList({ lastIndex }) {
 }
 
 export function BlogDetail() {
-  let { id } = useParams();
+  let { url } = useParams();
   const { data, error, loading } = useFetch(
-    "https://raw.githubusercontent.com/metamasao/test_github_pages/main/README.md",
+    `https://raw.githubusercontent.com/metamasao/metamasao.github.io/main/memo_blog/${url}`,
     false
   )
 
-  console.log(`blog: ${id}`)
+  console.log(`blog: ${url}`)
   if (error) return console.log(error);
   if (loading) return <Container><ClockLoader /></Container>;
 

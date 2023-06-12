@@ -1,6 +1,6 @@
 import { useContext, createContext, useState } from "react";
 
-import blogMetadata from "../TestData/metadata.json";
+import blogMetadata from "../metadata.json";
 
 const BlogContext = createContext();
 export const useBlogs = () => useContext(BlogContext);

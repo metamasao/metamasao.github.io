@@ -16,7 +16,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />}/>
           <Route path="blogs" element={<BlogList />} />
-          <Route path="blogs/:id" element={<BlogDetail />} />  
+          <Route path="blogs/:url" element={<BlogDetail />} />  
         </Routes>
       </Container>
       <footer className="text-center bg-dark text-dark-emphasis fixed-bottom">
