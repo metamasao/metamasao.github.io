@@ -34,6 +34,6 @@ if __name__ == "__main__":
 	parsed_metadata = parse_markdown_files(memo_dir=memo_dir)
 	sorted_metadata = sorted(parsed_metadata, key=lambda dict_element: dict_element["datetime"], reverse=True)
 
-	# datetime形式ではjsonにシリアライズできず、再度str型に戻す必要があるため。
+	# datetime型ではjsonにシリアライズできず、再度str型に戻す必要があるため。
 	strformat_metadata = list(map(converting_str_to_datetime, sorted_metadata))
 	serialize_metadata_into_json(sorted_metadata)
