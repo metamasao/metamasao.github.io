@@ -1,39 +1,61 @@
-import { useBlogs } from "./BlogProvider";
-import Badge from "react-bootstrap/Badge";
 import Card from "react-bootstrap/Card";
+import Container from "react-bootstrap/Container";
+import { Link, useParams } from "react-router-dom";
+import { ClockLoader } from "react-spinners";
+import ReactMarkdown from "react-markdown";
+import remarkFrontmatter from "remark-frontmatter";
 
-export default function BlogList() {
-  const { blogs, tags, filterBlogsByTag } = useBlogs();
+import { useBlogs } from "./BlogProvider";
+import useFetch from "./CustomHook";
+import Tags  from "./Tag";
+
+export default function BlogList({ lastIndex }) {
+  const { blogs } = useBlogs();
+  const blogLastIndex = lastIndex ? lastIndex : blogs.length;
 
   return (
     <>
-      <h1 className="my-4 mx-3">Blog or something</h1>
-      <div className="tags-badges my-4 mx-3">
-        {tags.map(tag => (
-          <Badge className="mx-1" bg="dark" as={"button"} onClick={filterBlogsByTag} name={tag}>
-            {tag}
-          </Badge>
-        ))}
-      </div>
+      <h2 className="my-4 mx-3">書いたよ</h2>
+      <Tags />
       <div className="blog-list my-3 mx-3">
-        {blogs.map(blog => (
-          <Card className="shadow-lg my-4" border="light">
+        {blogs.slice(0, blogLastIndex).map((blog, i) => (
+          <Card className="shadow-lg my-4" border="light" key={i}>
             <Card.Body>
               <Card.Title>
                 Title: {blog.title}
               </Card.Title>
               <Card.Subtitle className="text-muted my-1">Tags: {blog.tags} Created: {blog.datetime}</Card.Subtitle>
               <Card.Text>
-                test test
+                {blog.summary}
               </Card.Text>
-              <Card.Link href="#">
-                {/* ここでmarkdwonでfetchするときのコンポーネントにルーティングする */}
-                detail
-              </Card.Link>
+              <Link to={`/blogs/${blog.filename}`}>detail</Link>
             </Card.Body>
           </Card>
         ))}
       </div>
     </>
+  )
+}
+
+export function BlogDetail() {
+  let { id } = useParams();
+  const { data, error, loading } = useFetch(
+    "https://raw.githubusercontent.com/metamasao/test_github_pages/main/README.md",
+    false
+  )
+
+  console.log(`blog: ${id}`)
+  if (error) return console.log(error);
+  if (loading) return <Container><ClockLoader /></Container>;
+
+  return (
+    <Card className="shadow-lg" border="light">
+      <Card.Body>
+        <ReactMarkdown remarkPlugins={[remarkFrontmatter]}>
+          {data}
+        </ReactMarkdown>
+        <Link to="/">ホームに戻るよ</Link>
+      </Card.Body>
+    </Card>
   )
 }

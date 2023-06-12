@@ -5,13 +5,13 @@ export default function useFetch(uri, jsonFormat=true) {
   const [error, setError] = useState();
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => (
+  useEffect(() => {
     fetch(uri)
       .then(res => jsonFormat ? res.json() : res.text())
       .then(setData)
       .then(() => setLoading(false))
       .catch(setError)
-  ), [uri]);
+  }, [uri]);
 
   return { data, error, loading };
 }

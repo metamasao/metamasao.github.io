@@ -6,11 +6,10 @@ export default function BlogNav() {
   return (
     <Navbar bg="dark" variant="dark">
       <Container>
-        <Navbar.Brand>
-          <Nav.Link href="#">
-            Home
-          </Nav.Link>
-        </Navbar.Brand>
+        <Navbar.Brand href="/">ホームだよ</Navbar.Brand>
+        <Nav className="me-auto">
+          <Nav.Link href="/blogs">書いたよ一覧だよ</Nav.Link>
+        </Nav>
       </Container>
     </Navbar>
   )
