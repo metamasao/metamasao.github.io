@@ -1,7 +1,7 @@
 import Badge from "react-bootstrap/Badge";
 import { useBlogs } from "./BlogProvider";
 
-function getTags(metadata) {
+export function getTags(metadata) {
   const tagsSet = new Set()
   metadata.forEach(data => {
     let tagsSplitArray = data.tags.split(",");
