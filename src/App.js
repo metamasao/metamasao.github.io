@@ -5,6 +5,7 @@ import BlogNav from "./components/Nav";
 import Home from "./components/Home";
 import BlogList from "./components/Blog";
 import { BlogDetail } from "./components/Blog";
+import { HeadingH1 } from "./components/Heading";
 
 function App() {
 
@@ -12,15 +13,15 @@ function App() {
     <>
       <BlogNav />
       <Container>
-        <h1 className="my-3 mx-3">メモとかブログとか</h1>
+        <HeadingH1 content={"メモとかブログとか"}/>
         <Routes>
           <Route path="/" element={<Home />}/>
           <Route path="blogs" element={<BlogList />} />
           <Route path="blogs/:url" element={<BlogDetail />} />  
         </Routes>
       </Container>
-      <footer className="text-center bg-dark text-dark-emphasis fixed-bottom">
-        <p className="mt-3">&copy;metamasao</p>
+      <footer className="text-center bg-dark text-dark-emphasis py-1">
+        <p className="my-1">&copy;metamasao</p>
       </footer>
     </>
   )

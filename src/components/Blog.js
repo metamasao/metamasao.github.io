@@ -1,12 +1,12 @@
 import Card from "react-bootstrap/Card";
-import Container from "react-bootstrap/Container";
 import { Link, useParams } from "react-router-dom";
-import { ClockLoader } from "react-spinners";
 import ReactMarkdown from "react-markdown";
 import remarkFrontmatter from "remark-frontmatter";
 
 import { useBlogs } from "./BlogProvider";
+import { HeadingH2 } from "./Heading";
 import useFetch from "./CustomHook";
+import Loader from "./Loader";
 import Tags  from "./Tag";
 
 export default function BlogList({ lastIndex }) {
@@ -15,25 +15,31 @@ export default function BlogList({ lastIndex }) {
 
   return (
     <>
-      <h2 className="my-4 mx-3">書いたよ</h2>
+      <HeadingH2 content={"書いたよ"}/>
       <Tags />
-      <div className="blog-list my-3 mx-3">
+      <div className="blog-list my-3">
         {blogs.slice(0, blogLastIndex).map((blog, i) => (
-          <Card className="shadow-lg my-4" border="light" key={i}>
-            <Card.Body>
-              <Card.Title>
-                Title: {blog.title}
-              </Card.Title>
-              <Card.Subtitle className="text-muted my-1">Tags: {blog.tags} Created: {blog.datetime}</Card.Subtitle>
-              <Card.Text>
-                {blog.summary}
-              </Card.Text>
-              <Link to={`/blogs/${blog.filename}`}>detail</Link>
-            </Card.Body>
-          </Card>
+          <BlogListCard blog={blog} key={i}/>
         ))}
       </div>
     </>
+  )
+}
+
+export function BlogListCard({ blog, key }) {
+  return (
+    <Card className="shadow-lg my-3" border="light" key={key}>
+      <Card.Body>
+        <Card.Title>
+          Title: {blog.title}
+        </Card.Title>
+        <Card.Subtitle className="text-muted my-1">Tags: {blog.tags} Created: {blog.datetime}</Card.Subtitle>
+        <Card.Text>
+          {blog.summary}
+        </Card.Text>
+        <Link to={`/blogs/${blog.filename}`}>読む</Link>
+      </Card.Body>
+    </Card>
   )
 }
 
@@ -44,12 +50,11 @@ export function BlogDetail() {
     false
   )
 
-  console.log(`blog: ${url}`)
   if (error) return console.log(error);
-  if (loading) return <Container><ClockLoader /></Container>;
+  if (loading) return <Loader />;
 
   return (
-    <Card className="shadow-lg" border="light">
+    <Card className="shadow-lg my-3" border="light">
       <Card.Body>
         <ReactMarkdown remarkPlugins={[remarkFrontmatter]}>
           {data}
