@@ -42,8 +42,8 @@ test("test getTags function", () => {
 
   // verifying
   expect(tagsArray.length).toBe(4);
-  tagsArray.forEach(tag => {
-    console.log(`tag: ${tag}`);
-    expect(["tag1", "tag2", "tag3", "all"].includes(tag)).toBeTruthy();
-  });
+  expect(tagsArray.includes("tag1")).toBeTruthy();
+  expect(tagsArray.includes("tag2")).toBeTruthy();
+  expect(tagsArray.includes("tag3")).toBeTruthy();
+  expect(tagsArray.includes("all")).toBeTruthy();
 })
