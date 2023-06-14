@@ -14,7 +14,7 @@ export default function BlogList({ lastIndex }) {
   const blogLastIndex = lastIndex ? lastIndex : blogs.length;
 
   return (
-    <>
+    <div className="blog">
       <HeadingH2 content={"書いたよ"}/>
       <Tags />
       <div className="blog-list my-3">
@@ -22,7 +22,7 @@ export default function BlogList({ lastIndex }) {
           <BlogListCard blog={blog} key={i}/>
         ))}
       </div>
-    </>
+    </div>
   )
 }
 
