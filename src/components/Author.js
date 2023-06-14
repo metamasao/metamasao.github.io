@@ -7,6 +7,7 @@ import { BsGithub } from "react-icons/bs";
 import useFetch from "./CustomHook";
 import { HeadingH2 } from "./Heading";
 import Loader from "./Loader";
+import { LightCard } from "./Card";
 
 export default function Author() {
   const { data, error, loading } = useFetch("https://api.github.com/users/metamasao");
@@ -24,7 +25,7 @@ export default function Author() {
 
 export function AuthorDetailCard({ data }) {
   return (
-    <Card className="my-3 py-3 shadow-lg" border="light">
+    <LightCard>
       <Row>
         <Col className="align-self-center">
           <div className="text-center">
@@ -38,6 +39,6 @@ export function AuthorDetailCard({ data }) {
           <p className="text-start mx-2"><Card.Link href={data.html_url}><BsGithub size={"2em"}/></Card.Link></p>
         </Col>
       </Row>
-    </Card>
+    </LightCard>
   )
 }

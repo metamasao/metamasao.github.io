@@ -1,8 +1,8 @@
-import Card from "react-bootstrap/Card";
 import { Link, useParams } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
 import remarkFrontmatter from "remark-frontmatter";
 
+import { LightCard, CardTitle, CardSubtitle, CardText } from "./Card";
 import { useBlogs } from "./BlogProvider";
 import { HeadingH2 } from "./Heading";
 import useFetch from "./CustomHook";
@@ -28,18 +28,12 @@ export default function BlogList({ lastIndex }) {
 
 export function BlogListCard({ blog, key }) {
   return (
-    <Card className="shadow-lg my-3" border="light" key={key}>
-      <Card.Body>
-        <Card.Title>
-          Title: {blog.title}
-        </Card.Title>
-        <Card.Subtitle className="text-muted my-1">Tags: {blog.tags} Created: {blog.datetime}</Card.Subtitle>
-        <Card.Text>
-          {blog.summary}
-        </Card.Text>
-        <Link to={`/blogs/${blog.filename}`}>読む</Link>
-      </Card.Body>
-    </Card>
+    <LightCard key={key}>
+      <CardTitle title={blog.title} />
+      <CardSubtitle tags={blog.tags} created={blog.created}/>
+      <CardText content={blog.summary}/>
+      <Link to={`/blogs/${blog.filename}`}>読む</Link>
+    </LightCard>
   )
 }
 
@@ -54,13 +48,9 @@ export function BlogDetail() {
   if (loading) return <Loader />;
 
   return (
-    <Card className="shadow-lg my-3" border="light">
-      <Card.Body>
-        <ReactMarkdown remarkPlugins={[remarkFrontmatter]}>
-          {data}
-        </ReactMarkdown>
-        <Link to="/">ホームに戻るよ</Link>
-      </Card.Body>
-    </Card>
+    <LightCard>
+      <CardText><ReactMarkdown rehypePlugins={[remarkFrontmatter,]}>{data}</ReactMarkdown></CardText>
+      <Link to="/">ホームに戻るよ</Link>
+    </LightCard>
   )
 }
