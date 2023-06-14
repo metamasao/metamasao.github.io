@@ -30,7 +30,7 @@ export function BlogListCard({ blog, key }) {
   return (
     <LightCard key={key}>
       <CardTitle title={blog.title} />
-      <CardSubtitle tags={blog.tags} created={blog.created}/>
+      <CardSubtitle tags={blog.tags} created={blog.datetime}/>
       <CardText children={blog.summary}/>
       <Link to={`/blogs/${blog.filename}`}>読む</Link>
     </LightCard>
