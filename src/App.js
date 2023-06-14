@@ -6,6 +6,7 @@ import Home from "./components/Home";
 import BlogList from "./components/Blog";
 import { BlogDetail } from "./components/Blog";
 import { HeadingH1 } from "./components/Heading";
+import Footer from "./components/Footer";
 
 function App() {
 
@@ -20,9 +21,7 @@ function App() {
           <Route path="blogs/:url" element={<BlogDetail />} />  
         </Routes>
       </Container>
-      <footer className="text-center bg-dark text-dark-emphasis py-1">
-        <p className="my-1">&copy;metamasao</p>
-      </footer>
+      <Footer />
     </>
   )
 }

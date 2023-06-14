@@ -32,4 +32,14 @@ describe("test card components", () => {
     // verifying
     expect(textCardElement).toHaveTextContent("test content");
   })
+
+  test("test LightCard", () => {
+    // preparing
+    const { container } = render(<LightCard children={"test LightCard"}/>);
+    const lightCardElement = container.querySelector(".card")
+
+    // verifying
+    expect(lightCardElement).toHaveClass("shadow-lg mt-3 pt-1 card border-light");
+    expect(lightCardElement).toHaveTextContent("test LightCard");
+  })
 });
