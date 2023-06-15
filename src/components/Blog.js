@@ -17,7 +17,7 @@ export default function BlogList({ lastIndex }) {
     <div className="blog">
       <HeadingH2 content={"書いたよ"}/>
       <Tags />
-      <div className="blog-list my-3">
+      <div className="blog-list">
         {blogs.slice(0, blogLastIndex).map((blog, i) => (
           <BlogListCard blog={blog} key={i}/>
         ))}

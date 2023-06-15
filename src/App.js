@@ -23,7 +23,7 @@ function App() {
           <Route path="*" element={<Error404 content={"ないよ～！"}/>}/>
         </Routes>
       </Container>
-      <Footer />
+      <Footer author={"metamasao"}/>
     </>
   )
 }

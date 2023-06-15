@@ -1,7 +1,7 @@
-export default function Footer() {
+export default function Footer({ author }) {
   return (
-    <footer className="text-center bg-dark text-dark-emphasis py-1">
-      <p className="my-1">&copy;metamasao</p>
+    <footer className="text-center bg-dark text-dark-emphasis py-1 mt-3">
+      <p className="my-1">&copy;{author}</p>
     </footer>
   );
 }
