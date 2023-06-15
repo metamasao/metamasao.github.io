@@ -9,6 +9,16 @@
   # 本番用ファイルの作成と公開用のディレクトリ(docs)にコピー。Reactの機能追加や修正の際にはこのコマンドを実行する。
   $ npm run github-build
   ```
+  - メタデータの書式は以下の通り
+  ```text
+  ---
+  Filename: test.md
+  Title: test title
+  Summary: test summary
+  Tags: tag1,tag2
+  Datetime: 2023-01-01 00:00:00
+  ---
+  ```
 ## 修正・追加メモ
 - tagによるfilterがどうしてもand検索になってしまう。。。とりあえず大事ではないので、時間があるときに。。。はい。。。
 - dark or lightのthemeを作り簡単に変更できるようにする。これを先にやりたいなぁ。。。
