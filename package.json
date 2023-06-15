@@ -26,7 +26,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "github_build": "npm run build && cp -RT ./build ./docs"
+    "pre-github-build": "find ./docs -type f | xargs rm -f",
+    "github-build": "npm run pre-github-build && npm run build && cp -RT ./build ./docs"
   },
   "eslintConfig": {
     "extends": [

@@ -7,7 +7,7 @@ from datetime import datetime
 md = markdown.Markdown(extensions=["meta"])
 
 def remove_array(dict_metadata):
-    # metadata(key: value)のvalueが配列になっているため。
+    # metadata({key: value})のvalueが配列になっているため。
     new_value_list = list(map(lambda value: value[0], dict_metadata.values()))
     return dict(zip(dict_metadata.keys(), new_value_list))
 
