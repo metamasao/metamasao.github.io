@@ -17,7 +17,7 @@ export default function Author() {
   
   return (
     <div className="author">
-      <HeadingH2 content={"わたしよ"}/>
+      <HeadingH2 content={"わたし"}/>
       <AuthorDetailCard data={data}/>
     </div>
   )
@@ -29,7 +29,7 @@ export function AuthorDetailCard({ data }) {
       <Row>
         <Col className="align-self-center">
           <div className="text-center">
-            <Image src={data.avatar_url} roundedCircle style={{width: "250px", height: "250px"}} />
+            <Image src={data.avatar_url} roundedCircle style={{width: "200px", height: "200px"}} />
           </div>
         </Col>
         <Col className="align-self-center">

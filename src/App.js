@@ -15,7 +15,7 @@ function App() {
     <>
       <BlogNav />
       <Container>
-        <HeadingH1 content={"メモとかブログとか"}/>
+        <HeadingH1 content={"メモメモ"}/>
         <Routes>
           <Route path="/" element={<Home />}/>
           <Route path="blogs" element={<BlogList />} />
