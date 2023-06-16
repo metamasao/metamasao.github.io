@@ -4,7 +4,10 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
-// import { BrowserRouter as Router } from 'react-router-dom';
+/* 
+github pagesではbrowserからリクエストを送ると死ぬので、以下のHashRouterを使用。詳しくは以下のリンク参照。
+https://create-react-app.dev/docs/deployment/#notes-on-client-side-routing
+*/
 import { HashRouter as Router } from 'react-router-dom';
 
 import BlogProvider from './components/BlogProvider';
