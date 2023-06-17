@@ -1,6 +1,7 @@
 import { Link, useParams } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
 import remarkFrontmatter from "remark-frontmatter";
+import remarkGfm from "remark-gfm";
 
 import { LightCard, CardTitle, CardSubtitle, CardText } from "./Card";
 import { useBlogs } from "./BlogProvider";
@@ -49,7 +50,17 @@ export function BlogDetail() {
 
   return (
     <LightCard>
-      <CardText><ReactMarkdown rehypePlugins={[remarkFrontmatter,]}>{data}</ReactMarkdown></CardText>
+      <CardText>
+        <ReactMarkdown 
+          rehypePlugins={[remarkFrontmatter]} 
+          components={{
+            blockquote: ({node, ...props}) => <blockquote style={{backgroundColor: "#eeeeee", borderRadius: "10px", padding: "10px 10px", margin: "5px 2px", boxShadow: "5px 5px 10px #cccccc", fontStyle: "italic"}} {... props}/>,
+            pre: ({node, ...props}) => <pre style={{backgroundColor: "black", color: "white", borderRadius: "5px", padding: "10px 10px", boxShadow: "5px 5px 5px gray"}} {...props}/>
+          }}
+        >
+          {data}
+        </ReactMarkdown>
+      </CardText>
       <Link to="/">ホームに戻るよ</Link>
     </LightCard>
   )
