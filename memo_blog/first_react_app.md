@@ -29,17 +29,17 @@ Datetime: 2023-06-16 21:00:00
   > Since map builds a new array, calling it without using the returned array is an anti-pattern; use forEach or for...of instead.
 - npm audit is broken for front-end tooling by design
   - これまで先送りしてたやつです。適当に調べて「ふ～ん、そういうことね」と知ったかぶりしていた事柄です。
-  - ```npx create react app``` (以下CRAとする)でReactアプリを作成すると、 ```npm audit``` がすぐに脆弱性あるよ～と心臓をバクバクさせるのですが、これは
+  - ```npx create-react-app``` (以下CRAとする)でReactアプリを作成すると、 ```npm audit``` がすぐに脆弱性あるよ～と心臓をバクバクさせるのですが、これは
     - ```npm audit``` が nodeでつくられたアプリケーションのための脆弱性発見ツールで、本番環境でNodeアプリケーションを走らせたときに生じる静寂性を教えてくれる
     - 一方で、CRAは開発環境でのみ利用されて静的アセットを作るだけなので、大丈夫だと。
-    - 気になる場合は ```react-scripts``` をdevDependenciesに移動してあげれば大丈夫大丈夫。
+    - 気になる場合は ```react-scripts``` をdevDependenciesに移動してから ```npm audit --production``` してあげたら、脆弱性がないことを確認できるので大丈夫大丈夫。
     ```javascript
     "dependencies": {
       "react": "^17.0.2",
       "react-dom": "^17.0.2"
-        },
+    },
     "devDependencies": {
-    "react-scripts": "4.0.3"
+      "react-scripts": "4.0.3"
     },
     ```
     - 詳しくは以下のリンクを見てください。
