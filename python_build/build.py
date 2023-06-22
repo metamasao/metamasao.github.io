@@ -26,8 +26,8 @@ def parse_markdown(filename):
 def parse_markdown_files(memo_dir):
     return list(map(parse_markdown, memo_dir))
 
-def serialize_metadata_into_json(metadata):
-    with open("./src/metadata.json", mode="w") as f:
+def serialize_metadata_into_json(metadata, filename):
+    with open(f"./src/{filename}.json", mode="w") as f:
         json.dump(metadata, f)
     
 if __name__ == "__main__":
@@ -37,4 +37,4 @@ if __name__ == "__main__":
 
     # datetime型ではjsonにシリアライズできず、再度str型に戻す必要があるため。
     strformat_metadata = list(map(converting_str_to_datetime, sorted_metadata))
-    serialize_metadata_into_json(sorted_metadata)
+    serialize_metadata_into_json(sorted_metadata, "metadata")

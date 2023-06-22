@@ -10,11 +10,11 @@ export function getTags(metadata) {
   return [...tagsSet, "all"]
 }
 
-export function TagDetail({ tags, filterBlogsByTag }) {
+export function TagDetail({ tags, filterByTag }) {
   return (
     <div className="tags-badges my-3">
       {tags.map((tag, i) => (
-        <Badge className="mx-1" bg="dark" as={"button"} onClick={filterBlogsByTag} name={tag} key={i}>
+        <Badge className="mx-1" bg="dark" as={"button"} onClick={filterByTag} name={tag} key={i}>
           #{tag}
         </Badge>
       ))}
@@ -27,6 +27,6 @@ export default function Tags() {
   const tags = getTags(blogs);
 
   return(
-    <TagDetail tags={tags} filterBlogsByTag={filterBlogsByTag}/>
+    <TagDetail tags={tags} filterByTag={filterBlogsByTag}/>
   )
 }
