@@ -9,14 +9,11 @@ import Loader from "./Loader";
 
 export default function ReadingRecordsDetail() {
   let { isbn } = useParams();
-  console.log(isbn)
   const { data, error, loading } = useFetch(`https://api.openbd.jp/v1/get?isbn=${isbn}`);
 
   if (error) return console.log(error);
   if (loading) return <Loader />;
 
-  console.log(data[0].summary)
-  console.log(data[0].onix.CollateralDetail.TextContent)
   const bookSummary = data[0].summary;
   const bookDetail = data[0].onix.CollateralDetail.TextContent;
   return (
@@ -33,10 +30,12 @@ export default function ReadingRecordsDetail() {
           </div>
         </Col>
         <Col className="align-self-center mt-3">
-          <ul>
-            <li>Title: {bookSummary.title}</li>
-            <li>Author: {bookSummary.author}</li>
-            <li>Publisher: {bookSummary.publisher}</li>
+          <ul className="list-group list-group-flush">
+            <li className="list-group-item">Title: {bookSummary.title}</li>
+            <li className="list-group-item">Author: {bookSummary.author}</li>
+            <li className="list-group-item">Publisher: {bookSummary.publisher}</li>
+            <li className="list-group-item">Publish Date: {bookSummary.pubdate}</li>
+            <li className="list-group-item">ISBN: {bookSummary.isbn}</li>
           </ul>
         </Col>
       </Row>

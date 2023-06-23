@@ -11,13 +11,16 @@ https://create-react-app.dev/docs/deployment/#notes-on-client-side-routing
 import { HashRouter as Router } from 'react-router-dom';
 
 import BlogProvider from './components/BlogProvider';
+import ReadingRecordsProvider from './components/ReadingRecordPorvider';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Router>
       <BlogProvider>
+      <ReadingRecordsProvider>
         <App />
+      </ReadingRecordsProvider>
       </BlogProvider>
     </Router>
   </React.StrictMode>

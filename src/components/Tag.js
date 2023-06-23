@@ -13,6 +13,7 @@ export function getTags(metadata) {
 export function TagDetail({ tags, filterByTag }) {
   return (
     <div className="tags-badges my-3">
+      <span>Tags filter: </span>
       {tags.map((tag, i) => (
         <Badge className="mx-1" bg="dark" as={"button"} onClick={filterByTag} name={tag} key={i}>
           #{tag}

@@ -27,11 +27,11 @@ export default function BlogList({ lastIndex }) {
   )
 }
 
-export function BlogListCard({ blog, key }) {
+export function BlogListCard({ blog }) {
   return (
-    <LightCard key={key}>
+    <LightCard>
       <CardTitle title={blog.title} />
-      <CardSubtitle tags={blog.tags} created={blog.datetime}/>
+      <CardSubtitle tags={blog.tags} created={blog.datetime.slice(0, 10)}/>
       <CardText children={blog.summary}/>
       <Link to={`/blogs/${blog.filename}`}>読む</Link>
     </LightCard>

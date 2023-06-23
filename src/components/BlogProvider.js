@@ -9,7 +9,8 @@ export default function BlogProvider({ children }) {
   const [blogs, setBlogs] = useState(blogMetadata);
 
   const filterBlogsByTag = (event) => {
-    if (event.target.name === "all") return setBlogs(blogMetadata);
+    setBlogs(blogMetadata);
+    if (event.target.name === "all") return ;
     return setBlogs(blogs.filter(blog => blog.tags.includes(event.target.name)));
   };
 
