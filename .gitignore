@@ -25,3 +25,4 @@ yarn-error.log*
 test_metadata.json
 
 /draft
+/python_build/__pycache__

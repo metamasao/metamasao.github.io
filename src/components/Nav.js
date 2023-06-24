@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 export function NavLink({ to, linkColor, children }) {
   return (
-    <Link to={to} style={{textDecoration: "none", color: linkColor }}>
+    <Link className="me-4" to={to} style={{textDecoration: "none", color: linkColor }}>
       {children}
     </Link>
   );
@@ -20,6 +20,7 @@ export default function BlogNav() {
         </Navbar.Brand>
         <Nav className="me-auto ms-3">
           <NavLink to={"blogs"} linkColor={"grey"}>書いたよ一覧だよ</NavLink>
+          <NavLink to={"reading_records"} linkColor={"grey"}>読書記録</NavLink>
         </Nav>
       </Container>
     </Navbar>
