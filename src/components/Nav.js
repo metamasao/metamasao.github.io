@@ -16,10 +16,10 @@ export default function BlogNav() {
     <Navbar bg="dark" variant="dark">
       <Container>
         <Navbar.Brand>
-          <NavLink to={"/"} linkColor={"white"}>ホームだよ</NavLink>
+          <NavLink to={"/"} linkColor={"white"}>メモメモ</NavLink>
         </Navbar.Brand>
         <Nav className="me-auto ms-3">
-          <NavLink to={"blogs"} linkColor={"grey"}>書いたよ一覧だよ</NavLink>
+          <NavLink to={"blogs"} linkColor={"grey"}>書いた一覧</NavLink>
           <NavLink to={"reading_records"} linkColor={"grey"}>読書記録</NavLink>
         </Nav>
       </Container>
