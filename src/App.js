@@ -6,8 +6,6 @@ import BlogNav from "./components/Nav";
 import Home from "./components/Home";
 import BlogList from "./components/Blog";
 import { BlogDetail } from "./components/Blog";
-import ReadingRecordsList from "./components/ReadingRecordsList";
-import ReadingRecordsBookDetail from "./components/ReadingRecordsDetail";
 import { HeadingH1 } from "./components/Heading";
 import Footer from "./components/Footer";
 import Error404 from "./components/Error404";
@@ -23,8 +21,6 @@ function App() {
           <Route path="/" element={<Home />}/>
           <Route path="blogs" element={<BlogList />} />
           <Route path="blogs/:url" element={<BlogDetail />} />
-          <Route path="reading_records" element={<ReadingRecordsList />} />
-          <Route path="reading_records/:isbn" element={<ReadingRecordsBookDetail />} />
           <Route path="*" element={<Error404 content={"ないよ～！"}/>}/>
         </Routes>
       </Container>
