@@ -6,7 +6,8 @@ import BlogNav from "./components/Nav";
 import Home from "./components/Home";
 import BlogList from "./components/Blog";
 import { BlogDetail } from "./components/Blog";
-import { HeadingH1 } from "./components/Heading";
+import ReadingRecords from "./components/ReadingRecords";
+import ReadingRecordsDetail from "./components/ReadingRecordsDetail";
 import Footer from "./components/Footer";
 import Error404 from "./components/Error404";
 
@@ -16,12 +17,13 @@ function App() {
     <>
       <BlogNav />
       <Container>
-        <HeadingH1 content={"メモメモ"}/>
         <Routes>
           <Route path="/" element={<Home />}/>
           <Route path="blogs" element={<BlogList />} />
           <Route path="blogs/:url" element={<BlogDetail />} />
-          <Route path="*" element={<Error404 content={"ないよ～！"}/>}/>
+          <Route path="reading_records" element={<ReadingRecords />} />
+          <Route path="reading_records/:filename" element={<ReadingRecordsDetail />} />
+          <Route path="*" element={<Error404 content={"ない！"}/>}/>
         </Routes>
       </Container>
       <Footer author={"metamasao"}/>

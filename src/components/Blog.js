@@ -16,7 +16,7 @@ export default function BlogList({ lastIndex }) {
 
   return (
     <div className="blog">
-      <HeadingH2 content={"書いたよ"}/>
+      <HeadingH2 content={"書いた"}/>
       <Tags />
       <div className="blog-list">
         {blogs.slice(0, blogLastIndex).map((blog, i) => (
