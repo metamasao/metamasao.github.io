@@ -5,7 +5,6 @@ import remarkGfm from "remark-gfm";
 
 import { LightCard, CardTitle, CardSubtitle, CardText } from "./Card";
 import { useBlogs } from "./BlogProvider";
-import { HeadingH2 } from "./Heading";
 import useFetch from "./CustomHook";
 import Loader from "./Loader";
 import Tags  from "./Tag";
@@ -16,7 +15,6 @@ export default function BlogList({ lastIndex }) {
 
   return (
     <div className="blog">
-      <HeadingH2 content={"書いた"}/>
       <Tags />
       <div className="blog-list">
         {blogs.slice(0, blogLastIndex).map((blog, i) => (
