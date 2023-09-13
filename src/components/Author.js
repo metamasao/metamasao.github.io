@@ -32,7 +32,7 @@ export function AuthorDetailCard({ data }) {
       <Row>
         <div className="text-center mt-4">
           <p className="mx-2">
-            形而上学、倫理学、生物学の哲学、論理学、数学、物理、プログラミングが好き。          
+            {data.bio}          
           </p>
           <p>
             <a href="https://metamasao.github.io/#/blogs/profile.md">もうちょっと私について</a>
