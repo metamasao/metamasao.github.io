@@ -8,8 +8,9 @@ Tags: 自己紹介
 
 # 自己紹介
 
-どこかでエンジニアをしています。うふふ。自社 → 自社 → ?（転職活動中）。
-現代形而上学、倫理学、数学、プログラミングなどが好きです。
+どこかでエンジニアをしています。うふふ。簡単に言うと以下のような特徴を持っています。
+- 現代形而上学、倫理学、数学、プログラミングなどが好き。
+- 自社 → 自社 → ?（転職活動中）。
 
 ## エンジニアとして
 
@@ -20,21 +21,18 @@ Tags: 自己紹介
 
 ## 作ったアプリなど
 
-書評SNS
+- 書評SNS
+  - 2年前くらいに転職活動でアピールするために作ったアプリ。個人的なモチベーションとしては、大人になってから信頼できる書籍を選んで勉強するというのがとても難しいと思い、そのような問題を解決したいというのがあった(ある)。
+  - [repository](https://github.com/metamasao/review-sns)
 
-- 2年前くらいに転職活動でアピールするために作ったアプリ。個人的なモチベーションとしては、大人になってから信頼できる書籍を選んで勉強するというのがとても難しいと思い、そのような問題を解決したいというのがあった(ある)。
-- [repository](https://github.com/metamasao/review-sns)
+- このブログ
+  - GatsbyやJekyllといったSSGを使ってGithub Pagesを作ってもよかったけど、『React ハンズオンラーニング』を読んで勉強したのでせっかくなので、PythonとReactで自作SSGを作ってみた。本書で関数型プログラミングを学んで、Pythonでも関数型ぽく書けるようになってよかった。
+  - [repository](https://github.com/metamasao/metamasao.github.io)
 
-このブログ
-
-- GatsbyやJekyllといったSSGを使ってGithub Pagesを作ってもよかったけど、『React ハンズオンラーニング』を読んで勉強したのでせっかくなので、PythonとReactで自作SSGを作ってみた。本書で関数型プログラミングを学んで、Pythonでも関数型ぽく書けるようになってよかった。
-- [repository](https://github.com/metamasao/metamasao.github.io)
-
-markdown-metadata-parser
-
-- markdonwファイルのメタデータを解析したり、便利なデータを作成するライブラリ（開発中）。GatsbyやJekyllといった他のSSGだと、ページのデザインとMarkdownのメタデータの解析がほぼ一緒になってるけど、別々にしたら使いやすいのではないかと本ブログを作る際に思い、現在作成中。Markdownのメタデータを解析して、日付などによるソート、タグの作成などを出来るようになりたい。
-- OSS使ってばかりではなく、作らないと、という気持ちがある(なお、使ってもらえるほどの質なのかはわからないが、単純に楽しい。楽しいのは大事)。
-- [repository](https://github.com/metamasao/markdown-metadata-parser)
+- markdown-metadata-parser
+  - markdonwファイルのメタデータを解析したり、便利なデータを作成するライブラリ（開発中）。GatsbyやJekyllといった他のSSGだと、ページのデザインとMarkdownのメタデータの解析がほぼ一緒になってるけど、別々にしたら使いやすいのではないかと本ブログを作る際に思い、現在作成中。Markdownのメタデータを解析して、日付などによるソート、タグの作成などを出来るようになりたい。
+  - OSS使ってばかりではなく、作らないと、という気持ちがある(なお、使ってもらえるほどの質なのかはわからないが、Github ActionsとCodecovを利用してcoverage計測するの単純に楽しい。楽しいのは大事。よかったらどうぞ。 [Codecov Guide Github Tutorial](https://docs.codecov.com/docs/github-tutorial) )
+  - [repository](https://github.com/metamasao/markdown-metadata-parser)
 
 ## エンジニアとして好きな本
 
@@ -43,17 +41,17 @@ markdown-metadata-parser
 - Micha Jaworski, Tarek Ziade(新井正貴他訳)『エキスパートPythonプログラミング 第3版』（KADOKAWA）
   - どれも仕事でもプライベートでも本当に参考になった。『自走プログラマー』は広く浅くといった感じで、コードの設計やテスト、DB設計周り、開発の進め方など、参考になることが多かった。『プロフェッショナルPython』はPythonでのトピックに加えて、devops周りの話もあり助かるし、最後の『エキスパートPythonプログラミング』はもっと深くPythonの仕様やその計算量などについて学べてよかったし、最適化の章や最後にはPythonicなデザインパターンの章もあり、とても勉強になった。訳者による補足も勉強になる。
 
-辻真吾著『Pythonで学ぶアルゴリズムとデータ構造』（講談社サイエンティフィック）
-- よくあるアルゴリズムとデータ構造についてPythonを使って学ぶ本。本書のお陰で、計算複雑性などを学べてよかった。本書を読んだからこそ、DB設計やPythonの各データ構造とそのメソッドの計算量などを理解したりできた。ありがとうございますありがとうございます。
+- 辻真吾著『Pythonで学ぶアルゴリズムとデータ構造』（講談社サイエンティフィック）
+  - よくあるアルゴリズムとデータ構造についてPythonを使って学ぶ本。本書のお陰で、計算複雑性などを学べてよかった。本書を読んだからこそ、DB設計やPythonの各データ構造とそのメソッドの計算量などを理解したりできた。ありがとうございますありがとうございます。
 
-ミック『達人に学ぶDB設計』（翔泳社）
-- 正規化、チューニング、アンチパターン(本書では「グレーゾーン」と呼ばれている典型例)を学べる。DB設計周りで困ったら本書を参照するようにしている。『SQLアンチパターン』は1/3ほど読んで放置しているので、こちらも読まねば。。。
+- ミック『達人に学ぶDB設計』（翔泳社）
+  - 正規化、チューニング、アンチパターン(本書では「グレーゾーン」と呼ばれている典型例)を学べる。DB設計周りで困ったら本書を参照するようにしている。『SQLアンチパターン』は1/3ほど読んで放置しているので、こちらも読まねば。。。
 
-Alex Banks、Eve Porcello著（宮崎空訳）『Reactハンズオンラーニング 第2版―Webアプリケーション開発のベストプラクティス』
-- フロントエンドよくわからないマンから、少しわかる…かも？マンになれた気がする本。本当に勉強になった。でもwebpackはもう。。。
-- [読んだ時のメモ](https://metamasao.github.io/#/blogs/first_react_app.md)
+- Alex Banks、Eve Porcello著（宮崎空訳）『Reactハンズオンラーニング 第2版―Webアプリケーション開発のベストプラクティス』
+  - フロントエンドよくわからないマンから、少しわかる…かも？マンになれた気がする本。本当に勉強になった。でもwebpackはもう。。。
+  - [読んだ時のメモ](https://metamasao.github.io/#/blogs/first_react_app.md)
 
-Danie Roy Greenfeld, Audrey Roy Greenfeld “Two Scoops of Django”
+- Danie Roy Greenfeld, Audrey Roy Greenfeld “Two Scoops of Django”
 - Will Vincent ”Django for ~” シリーズ
   - Djangoでのベストプラクティスを学ぶ際にとても役に立った本。Two Scoops of Djangoはリファレンス本として、Django for シリーズはチュートリアル本として利用できる。前者はもうちょっと深くDjangoについての知識を提供してくれる所が、後者は公式ドキュメントやDjangoリポジトリの読み方、信頼できるライブラリ集を教えてくれる所がよかった。英語は簡単なので、ちょっと得意な人なら読めると思う。
 
