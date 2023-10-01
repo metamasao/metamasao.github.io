@@ -10,7 +10,7 @@ Tags: 自己紹介
 
 どこかでエンジニアをしています。うふふ。簡単に言うと以下のような特徴を持っています。
 - 現代形而上学、倫理学、数学、プログラミングなどが好き。
-- Python, Reactが好き。
+- Django(Python), React(JavaScript)が好き。これまで業務では、PythonとC#を使ったことがある。
 - 自社 → 自社 → ?（転職活動中）。
 
 ## エンジニアとして
@@ -24,15 +24,18 @@ Tags: 自己紹介
 
 - 書評SNS
   - 2年前くらいに転職活動でアピールするために作ったアプリ。個人的なモチベーションとしては、大人になってから信頼できる書籍を選んで勉強するというのがとても難しいと思い、そのような問題を解決したいというのがあった(ある)。
+  - 頑張った点は、Coverage（98％）、テストの高速化、モデルへのロジックの集約など。ここまでCoverageを高める必要はなかったけど、よくわからないまま頑張っていた。ただ、テストコードはあまり奇麗じゃない。。。
   - [repository](https://github.com/metamasao/review-sns)
 
 - このブログ
   - GatsbyやJekyllといったSSGを使ってGithub Pagesを作ってもよかったけど、『React ハンズオンラーニング』を読んで勉強したのでせっかくなので、PythonとReactで自作SSGを作ってみた。本書で関数型プログラミングを学んで、Pythonでも関数型ぽく書けるようになってよかった。
+  - ReactのCoverageは50%程度。あまり必要性を感じず、ロジックに関して気になる点だけテストした。
   - [repository](https://github.com/metamasao/metamasao.github.io)
 
 - markdown-metadata-parser
-  - markdonwファイルのメタデータを解析したり、便利なデータを作成するライブラリ（開発中）。GatsbyやJekyllといった他のSSGだと、ページのデザインとMarkdownのメタデータの解析がほぼ一緒になってるけど、別々にしたら使いやすいのではないかと本ブログを作る際に思い、現在作成中。Markdownのメタデータを解析して、日付などによるソート、タグの作成などを出来るようになりたい。
+  - markdonwファイルのメタデータを解析したり、便利なデータを作成するライブラリ（開発中）。GatsbyやJekyllといった他のSSGだと、ページのデザインとMarkdownのメタデータの解析がほぼ一緒になってるけど、別々にしたら使いやすいのではないかと本ブログを作る際に思い、現在作成中。Markdownのメタデータを解析して、日付などによるソート、タグの作成などを出来るようになりたい。内包表記を使ったり、必要に応じてdequeを使うなど計算量を意識して書いてる。
   - OSS使ってばかりではなく、作らないと、という気持ちがある(なお、使ってもらえるほどの質なのかはわからないが、Github ActionsとCodecovを利用してcoverage計測するの単純に楽しい。楽しいのは大事。よかったらどうぞ。 [Codecov Guide Github Tutorial](https://docs.codecov.com/docs/github-tutorial) )
+  - Coverageは今のところ94%。ターゲットを90%にしている。楽しい。
   - [repository](https://github.com/metamasao/markdown-metadata-parser)
 
 ## エンジニアとして好きな本
