@@ -26,7 +26,7 @@ Tags: 自己紹介
   - 2年前くらいに転職活動でアピールするために作ったアプリ。個人的なモチベーションとしては、大人になってから信頼できる書籍を選んで勉強するというのがとても難しいと思い、そのような問題を解決したいというのがあった(ある)。
   - 頑張った点は、Coverage（98％）、テストの高速化、モデルへのロジックの集約など。ここまでCoverageを高める必要はなかったけど、よくわからないまま頑張っていた。ただ、テストコードはあまり奇麗じゃない。。。
 
-- [このブログ built by me](https://github.com/metamasao/metamasao.github.io)
+- [このブログ](https://github.com/metamasao/metamasao.github.io)
   - GatsbyやJekyllといったSSGを使ってGithub Pagesを作ってもよかったけど、『React ハンズオンラーニング』を読んで勉強したのでせっかくなので、PythonとReactで自作SSGを作ってみた。本書で関数型プログラミングを学んで、Pythonでも関数型ぽく書けるようになってよかった。
   - ReactのCoverageは50%程度。あまり必要性を感じず、ロジックに関して気になる点だけテストした。
 
