@@ -27,11 +27,11 @@ Tags: 自己紹介
   - 頑張った点は、Coverage（98％）、テストの高速化、モデルへのロジックの集約など。ここまでCoverageを高める必要はなかったけど、よくわからないまま頑張っていた。ただ、テストコードはあまり奇麗じゃない。。。
 
 - [このブログ](https://github.com/metamasao/metamasao.github.io)
-  - GatsbyやJekyllといったSSGを使ってGithub Pagesを作ってもよかったけど、『React ハンズオンラーニング』を読んで勉強したのでせっかくなので、PythonとReactで自作SSGを作ってみた。本書で関数型プログラミングを学んで、Pythonでも関数型ぽく書けるようになってよかった。
+  - GatsbyやJekyllといったSSGを使ってGithub Pagesを作ってもよかったけど、『React ハンズオンラーニング』を読んで勉強したのでせっかくなので、PythonとReactで自作SSGを作ってみた。メタデータを利用して日付によるソートとタグの作成が可能。本書で関数型プログラミングを学んで、Pythonでも関数型ぽく書けるようになってよかった。
   - ReactのCoverageは50%程度。あまり必要性を感じず、ロジックに関して気になる点だけテストした。
 
 - [markdown-metadata-parser](https://github.com/metamasao/markdown-metadata-parser)
-  - markdonwファイルのメタデータを解析したり、便利なデータを作成するライブラリ（開発中）。GatsbyやJekyllといった他のSSGだと、ページのデザインとMarkdownのメタデータの解析がほぼ一緒になってるけど、別々にしたら使いやすいのではないかと本ブログを作る際に思い、現在作成中。Markdownのメタデータを解析して、日付などによるソート、タグの作成などを出来るようになりたい。内包表記を使ったり、必要に応じてdequeを使うなど計算量を意識して書いてる。
+  - markdonwファイルのメタデータを解析したり、便利なデータを作成するライブラリ（開発中）。GatsbyやJekyllといった他のSSGだと、ページのデザインとMarkdownのメタデータの解析がほぼ一緒になってるけど、別々にしたら使いやすいのではないかと本ブログを作る際に思い、現在作成中。Markdownのメタデータを解析して、日付などによるソートとタグの作成などをCLIから可能にする機能を実装するつもり。内包表記を使ったり、必要に応じてdequeを使うなど計算量を意識して書いてる。
   - OSS使ってばかりではなく、作らないと、という気持ちがある(なお、使ってもらえるほどの質なのかはわからないが、Github ActionsとCodecovを利用してcoverage計測するの単純に楽しい。楽しいのは大事。よかったらどうぞ。 [Codecov Guide Github Tutorial](https://docs.codecov.com/docs/github-tutorial) )
   - Coverageは今のところ94%。ターゲットを90%にしている。楽しい。
 
