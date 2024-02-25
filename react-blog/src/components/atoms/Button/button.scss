@@ -1,0 +1,46 @@
+@use "../../../global/global.scss";
+
+@import url('https://fonts.googleapis.com/css2?family=Anta&family=Noto+Sans+JP&family=Roboto&display=swap');
+
+@mixin buttonBase {
+  min-width: 60px;
+  height: 30px;
+
+  font-family: "Anta", "Roboto", "Noto Sans JP", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+
+  border: none;
+  border-radius: 5px;
+
+  &:hover {
+    outline: 1px solid global.$primary-text;
+    cursor: pointer;
+  }
+
+  display: flex;
+  flex-direction: row;
+
+  .button-content {
+    padding-top: 5px;
+    padding-left: 3px;
+  }
+
+  .button-icon {
+    padding-top: 5px
+  }
+}
+
+.button-primary {
+  @include buttonBase;
+
+  background-color: global.$primary;
+  color: global.$primary-text;
+}
+
+.button-on-primary-container {
+  @include buttonBase;
+
+  background-color: global.$on-primary-container;
+  color: global.$on-primary-container-text;
+}
