@@ -60,7 +60,6 @@
     "react-scripts": "5.0.1",
     "remark-frontmatter": "^5.0.0",
     "sass": "^1.71.0",
-    "storybook": "^7.6.16",
     "webpack": "^5.90.2"
   }
 }

@@ -7,6 +7,7 @@ import { Card } from "../../molecules/Card/Index";
 import { BaseTemplate } from "../BaseTemplate";
 import { useFetch } from "../../../pages/hooks/useFetch";
 
+import picture from "../../../blog-data/img/metamasao.png"
 import "./blog.scss";
 
 export const Blog = () => {

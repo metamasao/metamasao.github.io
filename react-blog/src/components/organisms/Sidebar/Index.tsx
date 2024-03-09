@@ -1,9 +1,12 @@
 import { useNavigate } from "react-router-dom";
-import { BsTags, BsPerson } from "react-icons/bs";
+import { Link } from "react-router-dom";
+import { BsTags, BsGithub } from "react-icons/bs";
 
+import { Card } from "../../molecules/Card/Index";
 import { SearchForm } from "../../molecules/SearchForm/Index";
 import { useBlog } from "../../contexts/BlogProvider";
 
+import picture from "../../../blog-data/img/metamasao.png";
 import "./sidebar.scss";
 
 export type sidebarItems = {
@@ -27,15 +30,18 @@ export const Sidebar = (props: SidebarProps) => {
   if (!filteredBlogByTag) return <></>;
 
   const MeAndBlog = (
-    <div 
-      className="me-and-blog-wrapper"
-      onClick={() => navigate("/blog/profile.md")}
-    >
-      <div className="person-icon">
-        <BsPerson />
+    <div className="sidebar-me">
+      <p>形而上学、数学、生物学の哲学、物理、プログラミングが好き。</p>
+      <div className="profile-link">
+        <Link to="/blog/profile.md">Detail</Link>
       </div>
-      <div className="me-blog-content">
-        Me
+      <div className="gh-link">
+        <div className="gh-icon">
+          <BsGithub />  
+        </div>
+        <div className="gh-text">
+          <a href="https://github.com/metamasao">Github</a>
+        </div>
       </div>
     </div>
   )
@@ -58,8 +64,8 @@ export const Sidebar = (props: SidebarProps) => {
       </div>
       {sidebarItems.map((item, i) => (
         <div className="sidebar-item" key={i}>
-          <div className="sidebar-item-header">
-            {MeAndBlog}
+          <div className="sidebar-item">
+            <Card title="metamasao" content={MeAndBlog} img={picture} cardClassName="card-link"/>
           </div>
           <div className="sidebar-item-header">
             {TagTitle}
