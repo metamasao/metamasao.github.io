@@ -3,7 +3,7 @@ import "./footer.scss";
 export const Footer = () => {
   return (
     <div className="footer-wrapper">
-      <footer>test</footer>
+      <footer>&copy;metamasao</footer>
     </div>
   )
 }

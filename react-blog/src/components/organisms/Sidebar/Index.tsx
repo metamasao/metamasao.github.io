@@ -1,4 +1,5 @@
-import { BsTags } from "react-icons/bs";
+import { useNavigate } from "react-router-dom";
+import { BsTags, BsPerson } from "react-icons/bs";
 
 import { SearchForm } from "../../molecules/SearchForm/Index";
 import { useBlog } from "../../contexts/BlogProvider";
@@ -20,15 +21,31 @@ export interface SidebarProps {
 
 export const Sidebar = (props: SidebarProps) => {
   const {sidebarState, sidebarItems} = props
+
+  const navigate = useNavigate()
   const {filteredBlogByTag, selectedTag} = useBlog()
   if (!filteredBlogByTag) return <></>;
+
+  const MeAndBlog = (
+    <div 
+      className="me-and-blog-wrapper"
+      onClick={() => navigate("/blog/profile.md")}
+    >
+      <div className="person-icon">
+        <BsPerson />
+      </div>
+      <div className="me-blog-content">
+        Me
+      </div>
+    </div>
+  )
 
   const TagTitle = (
     <div className="tag-title">
       <div className="tag-icon">
         <BsTags />
       </div>
-      <div className="tag-title">
+      <div className="tag-title-content">
         Tag
       </div>
     </div>
@@ -38,10 +55,12 @@ export const Sidebar = (props: SidebarProps) => {
     <div className={sidebarState ? "sidebar-active" : "sidebar-inactive"}>
       <div className="search-form-wrapper">
         <SearchForm searchFormClassName="search-form-block"/>
-        
       </div>
       {sidebarItems.map((item, i) => (
         <div className="sidebar-item" key={i}>
+          <div className="sidebar-item-header">
+            {MeAndBlog}
+          </div>
           <div className="sidebar-item-header">
             {TagTitle}
           </div>
