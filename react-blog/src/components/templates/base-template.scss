@@ -12,13 +12,13 @@
 
 .grid-container {
   grid-area: main;
-
-  // margin: 20px 5vw;
-
+  width: 100%;
+  // margin: 100px auto;
   display: flex;
   flex-direction: row;
   min-height: calc(100vh - 100px);
   // margin: 20px 0px;
+
 
   .main-wrapper {
     flex: 1;
@@ -39,7 +39,7 @@
     }
   
     .grid-sidebar {
-      width: 270px;
+      width: calc(100% - 5vw);
       display: block;
       grid-column: 2;
       margin-right: 5vw;
