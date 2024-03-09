@@ -19,7 +19,7 @@
 
   .main-wrapper {
     flex: 1;
-    margin: 30px 5%;
+    margin: 30px 10px;
   }
   .grid-sidebar {
     display: none;
@@ -32,16 +32,17 @@
 
     .main-wrapper {
       grid-column: 1;
-      margin-right: 0vw;
+      margin-right: 0px;
+      margin-left: 50px;
     }
   
     .grid-sidebar {
-      width: calc(100% - 5vw);
       display: block;
       grid-column: 2;
-      margin-right: 5vw;
+      margin-right: 50px;
       margin-top: 30px;
       // min-width: 200px;
+      background-color: yellow;
 
       .grid-sidebar-tags {
         margin-top: 20px;

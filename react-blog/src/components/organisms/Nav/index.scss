@@ -14,7 +14,7 @@
     display: block;
     grid-column: 9;
     padding-top: 10px;
-    padding-right: 5vw;
+    padding-right: 5%;
   }
 }
 
@@ -22,13 +22,13 @@
   grid-column: 9;
   font-size: 25px;
   padding-top: 10px;
-  padding-right: 5vw;
+  padding-right: 5%;
   cursor: pointer;
 
   @media screen and (min-width: 900px){
     grid-column: 1;
     padding-top: 10px;
-    padding-left: 3vw;
+    padding-left: 3%;
     padding-right: 0;
   }
 }
