@@ -1,0 +1,46 @@
+.nav {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  width: 100vw;
+
+  background-color: rgb(0, 0, 5);
+  height: 50px;
+}
+
+.nav-form {
+  display: none;
+
+  @media screen and (min-width: 900px){
+    display: block;
+    grid-column: 9;
+    padding-top: 10px;
+    padding-right: 5vw;
+  }
+}
+
+.nav-home {
+  grid-column: 9;
+  font-size: 25px;
+  padding-top: 10px;
+  padding-right: 5vw;
+  cursor: pointer;
+
+  @media screen and (min-width: 900px){
+    grid-column: 1;
+    padding-top: 10px;
+    padding-left: 3vw;
+    padding-right: 0;
+  }
+}
+
+
+.sidebar-icon {
+  height: 40px;
+  width: 40px;
+  margin-top: 5px;
+  cursor: pointer;
+
+  @media screen and (min-width: 900px) {
+    display: none;
+  }
+}

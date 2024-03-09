@@ -1,0 +1,10 @@
+.search-form {
+  display: flex;
+  flex-direction: row;
+}
+
+.search-form-block {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}

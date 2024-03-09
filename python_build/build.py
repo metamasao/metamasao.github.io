@@ -4,6 +4,8 @@ import markdown
 import json
 from datetime import datetime
 
+from create_tags import create_tags
+
 md = markdown.Markdown(extensions=["meta"])
 
 def remove_array(dict_metadata):
@@ -27,7 +29,7 @@ def parse_markdown_files(memo_dir):
     return list(map(parse_markdown, memo_dir))
 
 def serialize_metadata_into_json(metadata, filename):
-    with open(f"./src/{filename}.json", mode="w") as f:
+    with open(f"./react-blog/src/blog-data/{filename}.json", mode="w") as f:
         json.dump(metadata, f)
     
 if __name__ == "__main__":
@@ -38,3 +40,5 @@ if __name__ == "__main__":
     # datetime型ではjsonにシリアライズできず、再度str型に戻す必要があるため。
     strformat_metadata = list(map(converting_str_to_datetime, sorted_metadata))
     serialize_metadata_into_json(sorted_metadata, "metadata")
+
+    create_tags()
