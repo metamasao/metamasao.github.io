@@ -149,21 +149,14 @@ export class Converter implements IConverter {
     this.content = content
   }
 
-  convertHeading(blockText: string): string {        
-    const regExp = /#.*/g;
-    const headings = blockText.match(regExp)
-    if (!headings) {
-      return ""
+  convertHeading(blockText: string): string {            
+    const prefix = /#{1,4}\s/g;      
+    let hashCount = 0;
+    for (const c of blockText.split("")) {
+      if (c === "#") hashCount++
     }
 
-    const newHeadings = headings.map((heading, i) => {
-      let newHeading = "";
-      const prefix = /#{1,4}\s/g;      
-
-      newHeading = heading.replace(prefix, `<h${i + 1}>`) + `</h${i + 1}>\n`      
-      return newHeading
-    })        
-    return newHeadings.join("\n")
+    return blockText.replace(prefix, `<h${hashCount}>`) + `</h${hashCount}>\n\n`      
   }
 
   convertList(blockText: string): string {    
@@ -184,20 +177,29 @@ export class Converter implements IConverter {
     }
 
     for (let i = 0; i < mdList.length; i++) {
-      if (i > 0 && i < (mdList.length - 1)) {
-        const current = mdList[i]
-        const before = mdList[i - 1]
-        const after = mdList[i + 1]        
+      const current = mdList[i]
 
+      if (i > 0) {
+        const before = mdList[i - 1]
         if (countSpace(before) < countSpace(current)) {
           mdList[i] = "<ul>\n" + mdList[i] 
         }
+      }
+      
 
+      if (i < (mdList.length - 1)) {                
+        const after = mdList[i + 1]          
+        
         if (countSpace(after) < countSpace(current)) {          
           const q = (countSpace(current) - countSpace(after)) / 2          
           mdList[i] = mdList[i] + "</li>\n" + "</ul>\n".repeat(q)
         }        
-      }      
+      }
+
+      if (i === mdList.length - 1) {
+        const q = countSpace(current) / 2
+        mdList[i] = mdList[i] + "</li>\n" + "</ul>\n".repeat(q)
+      }
     }
 
     const newList = mdList.map(text => {

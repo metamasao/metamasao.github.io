@@ -19,7 +19,7 @@ export const Navigation = (props: NavigationProps) => {
       </div>
       <div className="navigation__nav-items">
         {navItems.map(navItem => (
-          <div className="navigation__nav-item" onClick={() => navigate(`${navItem}.md`)}>
+          <div className="navigation__nav-item" onClick={() => navigate(`/${navItem}.md`)}>
             {navItem}
           </div>
         ))}
