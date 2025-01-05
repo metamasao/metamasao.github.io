@@ -1,5 +1,3 @@
-import { useState } from "react"
-
 // third party
 import { useNavigate } from "react-router"
 
@@ -22,10 +20,8 @@ export interface CardProps {
 export const Card = (props: CardProps) => {
   const {title, datetime, filename, content, picture, isArticle, tags, onClickTag} = props;
   const navigate = useNavigate()
-  // const [isTouch, setIsTouch] = useState<boolean>(false);
   const cardClassName: string = [
     isArticle ? "card__article" : "card",
-    // isTouch ? "card__touched" : ""
   ].join(" ")
 
   const onClickCard = () => {
