@@ -1,0 +1,20 @@
+.main {
+  
+  &__wrapper {    
+  }
+
+  &__title {    
+  }
+
+  &__tab {
+    
+  }
+
+  &__cards {
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+  }
+
+}

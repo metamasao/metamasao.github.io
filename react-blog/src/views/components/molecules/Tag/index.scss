@@ -1,0 +1,36 @@
+.tag {
+
+  &__wrapper {
+    display: flex;
+    flex-direction: row;    
+    gap: 10px;
+
+    max-height: 40px;
+    overflow-y: auto;
+  }
+
+  &__item {
+    height: 18px;
+    width: max-content;
+
+    display: grid;
+    justify-content: center;
+    align-items: center; 
+
+    font-size: 12px;
+    color: #a0a0a0;            
+  }
+
+  &__link {
+    padding: 1px 8px;    
+    border: 1px solid  #383838;
+    color: #383838;        
+    cursor: pointer;
+
+    &:hover {
+      transition: 0.5s;
+      background-color: #383838;
+      color: #fff;
+    }
+  }
+}

@@ -29,7 +29,7 @@ def parse_markdown_files(memo_dir):
     return list(map(parse_markdown, memo_dir))
 
 def serialize_metadata_into_json(metadata, filename):
-    with open(f"./react-blog/src/blog-data/{filename}.json", mode="w") as f:
+    with open(f"./react-blog/blog_data/{filename}.json", mode="w") as f:
         json.dump(metadata, f)
     
 if __name__ == "__main__":

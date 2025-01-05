@@ -1,8 +1,21 @@
+// third party
+import { HashRouter, Routes, Route } from 'react-router'
+
+// component
+import { Index } from './views/pages'
+import { Detail } from './views/pages/detail'
+
 import './App.scss'
 
-function App() {
+function App() {  
+
   return (
-    <div>こんにちは世界 from vite</div>
+    <HashRouter>
+      <Routes>        
+        <Route path=':filename' element={<Detail />} />
+        <Route path='/' element={<Index />}/>
+      </Routes>
+    </HashRouter>
   )
 }
 

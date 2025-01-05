@@ -25,7 +25,7 @@ def create_tags_json(tags_set, tags_deque):
 
 
 def create_tags():
-    with open("./react-blog/src/blog-data/metadata.json") as f_metadata, open("./react-blog/src/blog-data/tags.json", "w") as f_tags:
+    with open("./react-blog/blog_data/metadata.json") as f_metadata, open("./react-blog/blog_data/tags.json", "w") as f_tags:
         content = f_metadata.read()
         article_data = json.loads(content)
         tags_deque = to_tags_deque(article_data=article_data)
