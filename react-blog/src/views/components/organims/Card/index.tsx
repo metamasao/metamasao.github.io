@@ -22,10 +22,10 @@ export interface CardProps {
 export const Card = (props: CardProps) => {
   const {title, datetime, filename, content, picture, isArticle, tags, onClickTag} = props;
   const navigate = useNavigate()
-  const [isTouch, setIsTouch] = useState<boolean>(false);
+  // const [isTouch, setIsTouch] = useState<boolean>(false);
   const cardClassName: string = [
     isArticle ? "card__article" : "card",
-    isTouch ? "card__touched" : ""
+    // isTouch ? "card__touched" : ""
   ].join(" ")
 
   const onClickCard = () => {
@@ -37,8 +37,12 @@ export const Card = (props: CardProps) => {
   return (
     <div 
       className={cardClassName} 
-      onTouchStart={() => {setIsTouch(!isTouch)}}
-      onClick={() => onClickCard()}
+      // onTouchStart={() => {setIsTouch(!isTouch)}}
+      onClick={
+        !isArticle 
+        ? () => onClickCard()
+        : undefined
+      }
       >
       <div className="card__header">
         <div className="card__title">{title}</div>
