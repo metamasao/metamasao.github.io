@@ -223,27 +223,27 @@ export class Converter implements IConverter {
   }
 }
 
-export class ConverterV2 implements IConverter {
-  content: string
+// export class ConverterV2 implements IConverter {
+//   content: string
 
-  constructor(content: string) {
-    this.content = content
-  }
+//   constructor(content: string) {
+//     this.content = content
+//   }
 
-  convertHeading(blockText: string): string {
-    return ""
-  }
+//   convertHeading(blockText: string): string {
+//     return ""
+//   }
 
-  convertList(blockText: string): string {
-    return ""
-  }
+//   convertList(blockText: string): string {
+//     return ""
+//   }
 
-  convertQuote(blockText: string): string {
-    return ""
-  }
+//   convertQuote(blockText: string): string {
+//     return ""
+//   }
 
-  convertCode(blockText: string): string {
-    return ""
-  }
-}
+//   convertCode(blockText: string): string {
+//     return ""
+//   }
+// }
 
